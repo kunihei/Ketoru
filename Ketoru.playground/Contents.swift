@@ -2,11 +2,13 @@ import UIKit
 
 class VirtualKetoru {
     var boilingTimer:Timer = Timer()
-    var boilingCount = 0
+    var boilingCountUp = 0
     var boilingSwich = 1
+    var AmountOfWater = 300
     
     func boilingFunction() {
-        if boilingSwich == 1 {
+        let boilingOn = 1
+        if boilingSwich == boilingOn {
             
             boilingTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(boilingTime), userInfo: nil, repeats: true)
         } else {
@@ -15,8 +17,9 @@ class VirtualKetoru {
     }
     
     @objc func boilingTime() {
-        boilingCount += 1
-        if boilingCount == 5 {
+        let boilingSetCount = 5
+        boilingCountUp += 1
+        if boilingCountUp == boilingSetCount {
             print("お湯が沸きました！！")
             boilingSwich = 0
             boilingTimer.invalidate()
