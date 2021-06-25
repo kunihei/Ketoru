@@ -4,10 +4,15 @@ class VirtualKetoru {
     var boilingTimer:Timer = Timer()
     var boilingCountUp = 0
     var boilingSwich = 1
-    var AmountOfWater = 300
+    var AmountOfWater = 0
     
     func boilingFunction() {
         let boilingOn = 1
+        let notWater = 0
+        guard AmountOfWater != notWater else {
+            print("故障しました！")
+            return
+        }
         if boilingSwich == boilingOn {
             
             boilingTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(boilingTime), userInfo: nil, repeats: true)
