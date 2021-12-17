@@ -10,7 +10,7 @@ class VirtualKetoru {
         let boilingOn = 1
         let notWater = 0
         guard AmountOfWater != notWater else {
-            print("故障しました！")
+            print("故障しましたマジです！")
             return
         }
         if boilingSwich == boilingOn {
